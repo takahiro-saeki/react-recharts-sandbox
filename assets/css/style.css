@@ -33,4 +33,10 @@
   color: #FFF;
   text-align: center;
   border-radius: .5rem;
+  border: 1px solid #0097A7;
+  transition: .5s;
+  &:hover {
+    color: #0097A7;
+    background: #FFF;
+  }
 }
