@@ -6,6 +6,8 @@ import SimpleLine from './container/SimpleLine';
 import SimpleRadar from './container/SimpleRadar';
 import SimpleBar from './container/SimpleBar';
 import StackedArea from './container/StackedArea';
+import CustomContentOfTooltip from './container/CustomContentOfTooltip';
+import JointLineScatter from './container/JointLineScatter';
 
 const elem = document.querySelector('#app');
 render(
@@ -15,6 +17,8 @@ render(
     <Route path='/SimpleLine' component={SimpleLine} />
     <Route path='/SimpleBar' component={SimpleBar} />
     <Route path='/StackedArea' component={StackedArea} />
+    <Route path='/CustomContentOfTooltip' component={CustomContentOfTooltip} />
+    <Route path='/JointLineScatter' component={JointLineScatter} />
   </Router>,
   elem
   )
