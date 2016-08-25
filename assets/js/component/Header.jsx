@@ -7,7 +7,7 @@ export default class Header extends Component {
   }
 
   static defaultProps = {
-    page: 'react-rechars-sandbox'
+    page: 'react-recharts-sandbox'
   }
 
   render() {
