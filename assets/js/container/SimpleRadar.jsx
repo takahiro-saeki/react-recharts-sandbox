@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis} from 'Recharts';
 import {browserHistory} from 'react-router';
+import Header from '../component/Header';
 
 export default class SimpleRadar extends Component {
   constructor(props) {
@@ -22,14 +23,15 @@ export default class SimpleRadar extends Component {
     ];
     return (
       <main>
-      <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data}>
-        <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
-        <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />
-        <PolarRadiusAxis/>
-      </RadarChart>
-      <div onClick={this.location}>戻る</div>
-    </main>
+        <Header page='SimpleRadar' />
+        <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data}>
+          <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
+          <PolarGrid />
+          <PolarAngleAxis dataKey="subject" />
+          <PolarRadiusAxis/>
+        </RadarChart>
+        <div onClick={this.location}>戻る</div>
+      </main>
     )
   }
 }

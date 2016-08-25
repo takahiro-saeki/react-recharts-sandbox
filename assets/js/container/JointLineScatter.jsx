@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {ScatterChart, Scatter, XAxis, YAxis, ZAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import {browserHistory} from 'react-router';
+import Header from '../component/Header';
 
 export default class JointLineScatter extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export default class JointLineScatter extends Component {
     const data02 = [{x: 30, y: 20}, {x: 50, y: 180}, {x: 75, y: 240}, {x: 100, y: 100}, {x: 120, y: 190}];
     return (
       <main>
+        <Header page='JointLineScatter' />
         <ScatterChart width={600} height={400} margin={{top: 20, right: 20, bottom: 20, left: 20}}>
           <XAxis dataKey={'x'} name='stature' unit='cm'/>
           <YAxis dataKey={'y'} name='weight' unit='kg'/>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
+import uuid from 'node-uuid';
 import style from '../../css/style';
 
 export default class Main extends Component {
@@ -12,19 +13,23 @@ export default class Main extends Component {
   }
 
   render() {
+    const data = [
+      'SimpleRadar', 'SimpleLine', 'SimpleBar',
+      'StackedArea', 'CustomContentOfTooltip', 'JointLineScatter'
+    ];
+
+    const list = data.map(list => {
+      return (
+        <li key={uuid.v4()} className={style.box} onClick={() => this.location(`/${list}`)}>
+          <div className={style['inner-box']}>{list}</div>
+        </li>
+      )
+    })
+
     return (
       <main>
         <header className={style.header}>react-rechars-sandbox</header>
-        <ul className={style.container}>
-          <li className={style.box} onClick={() => this.location('/SimpleRadar')}>
-            <div className={style['inner-box']}>SimpleRadarChart</div>
-          </li>
-          <li className={style.box} onClick={() => this.location('/SimpleLine')}>SimpleLineChart</li>
-          <li className={style.box} onClick={() => this.location('/SimpleBar')}>SimpleBar</li>
-          <li className={style.box} onClick={() => this.location('/StackedArea')}>StackedArea</li>
-          <li className={style.box} onClick={() => this.location('/CustomContentOfTooltip')}>CustomContentOfTooltip</li>
-          <li className={style.box} onClick={() => this.location('/JointLineScatter')}>JointLineScatter</li>
-        </ul>
+        <ul className={style.container}>{list}</ul>
       </main>
     )
   }

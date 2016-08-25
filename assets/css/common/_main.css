@@ -25,6 +25,7 @@
   flex-basis: 33.333%;
   max-width: 33.333%;
   margin: 1rem auto;
+  cursor: pointer;
 }
 
 .inner-box {

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import {browserHistory} from 'react-router';
+import Header from '../component/Header';
 
 export default class SimpleBar extends Component {
   constructor(props) {
@@ -23,18 +24,19 @@ export default class SimpleBar extends Component {
     ];
     return (
       <main>
-      <BarChart width={600} height={300} data={data}
-        margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-        <XAxis dataKey="name"/>
-        <YAxis/>
-        <CartesianGrid strokeDasharray="3 3"/>
-        <Tooltip/>
-        <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
-      </BarChart>
-      <div onClick={this.location}>戻る</div>
-    </main>
+        <Header page='SimpleBar' />
+        <BarChart width={600} height={300} data={data}
+          margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+          <XAxis dataKey="name"/>
+          <YAxis/>
+          <CartesianGrid strokeDasharray="3 3"/>
+          <Tooltip/>
+          <Legend />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+        <div onClick={this.location}>戻る</div>
+      </main>
     )
   }
 }
