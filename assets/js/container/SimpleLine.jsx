@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import {browserHistory} from 'react-router';
 import Header from '../component/Header';
+import style from '../../css/style';
 
 export default class SimpleLine extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export default class SimpleLine extends Component {
     return(
       <main>
         <Header page='SimpleLine' />
-        <LineChart width={600} height={300} data={randomData()}
+        <LineChart width={600} height={300} data={randomData()} style={{margin: '3rem auto 2rem'}}
           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
           <XAxis dataKey="name"/>
           <YAxis/>
@@ -38,7 +39,7 @@ export default class SimpleLine extends Component {
           <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
           <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
         </LineChart>
-        <div onClick={this.location}>戻る</div>
+        <div onClick={this.location} className={style['return-btn']}>戻る</div>
       </main>
     )
   }
